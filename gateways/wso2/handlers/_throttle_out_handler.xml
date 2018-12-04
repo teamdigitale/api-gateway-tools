@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This sequence sets the Retry-After HTTP Header when a request is throttled out.
+You can customize the standard WSO2 one, which is in the folder:
+
+  $PRODUCT_HOME_APIMANAGER/repository/deployment/server/synapse-configs/default/sequences/
+
+In multi-tenant environments, the folder is:
+
+  $PRODUCT_HOME_APIMANAGER/repository/tenants/$TENANT_ID/synapse-configs/default/sequences/
+
+ Copyright (c) 2018 Lombardia Informatica SPA and Regione Lombardia
+
+ License: BSD-3-Clause https://opensource.org/licenses/BSD-3-Clause
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    
+-->
+<sequence xmlns="http://ws.apache.org/ns/synapse" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_throttle_out_handler_">
+  <script language="js"><![CDATA[        
+        function formatDate(date) {
+                var year = date.substring(0,4);
+                var month = date.substring(5,8);
+                var day = date.substring(9,11);
+                var time = date.substring(12,20);
+                var locale = date.substring(20,25);
+                var newDate = month + " " + day + " " + year + " " + time + " UTC" + locale;
+                return newDate;
+        };
+        var log = mc.getServiceLog();
+        var retryAfterDate = Date.parse(formatDate(mc.getProperty("NEXT_ACCESS_UTC_TIME")));
+        var sysdate = Date.parse(new Date().toString());
+        log.info("retryAfterDate: " + retryAfterDate);
+    	log.info("sysdate: " + sysdate);
+    	var result = Math.floor((retryAfterDate - sysdate) / 1000);
+        log.info("Retry-After: " + result);
+    	mc.setProperty("Retry-After-Sec", result.toString());
+    ]]></script>
+  <property name="X-JWT-Assertion" scope="transport" action="remove"/>
+  <property name="Retry-After" expression="$ctx:Retry-After-Sec" scope="transport"/>
+  <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtThrottleUsageHandler"/>
+  <sequence key="_cors_request_handler_"/>
+</sequence>
