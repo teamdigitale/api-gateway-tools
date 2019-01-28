@@ -3,7 +3,7 @@
 [GovWay](https://github.com/link-it/govway) è un API gateway open source (licenza GPL-v3) basato su [OpenSPCoop](https://www.openspcoop.org/openspcoop/) - implementazione della Porta di Dominio italiana.
 
 
-## Conformità al Modello di Interoperabilità 2018
+## Funzionalità del Modello di Interoperabilità 2018 implementate
 * API REST
   - Interfacce: supporto per il caricamento di API OpenAPI 3.0.
   - Validazione: supporto per la validazione dei contenuti in formato JSON ed XML
