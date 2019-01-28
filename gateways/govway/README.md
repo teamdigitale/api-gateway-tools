@@ -7,14 +7,16 @@ GovWay è un API gateway open source (licenza GPL-v3) progettato per le specific
 * Retrocompatibile con il paradigma di cooperazione applicativa (profilo SPCoop) 
 
 Sito Web: https://govway.org
+
 Pagina GitHub: https://github.com/link-it/govway
+
 Licenza: GPL-v3
 
 ## Conformità al Modello di Interoperabilità 2018
 * API REST
   - Interfacce: supporto per il caricamento di API OpenAPI 3.0.
   - Validazione: supporto per la validazione dei contenuti in formato JSON ed XML
-  - Sicurezza: supporto del formato JOSE per la firma e la crittografia in ambito JSON e XmlSignature ed XmlEncrypt in ambito XML.
+  - Sicurezza: supporto del formato JOSE per la firma e la crittografia in ambito JSON e XmlSignature/XmlEncrypt in ambito XML.
   - Error Handling: conforme alle specifiche del RFC 7807 (Problem Details for HTTP APIs).
 * Web Services SOAP
   - Interfacce: supporto per il caricamento di interfacce WSDL.
@@ -33,7 +35,7 @@ Licenza: GPL-v3
     - X-RateLimit-Limit: limite massimo di richieste;
     - X-RateLimit-Remaining: numero di richieste rimanenti fino al prossimo reset;
     - X-RateLimit-Reset: il numero di secondi mancanti al momento in cui il limite verrà reimpostato
-  - Error Handling: in caso di violazione viene generato un response code http 429
+  - Error Handling: in caso di violazione viene generato un response code http 429 (con Problem Details RFC 7807)
   - Sospensione di una API: possibilità di sospendere l’accesso a una API o di limitare l’accesso ad API temporaneamente non disponibili (es. read timeout), generando un response code http 503, con header ‘Retry-After’ valorizzato al numero di secondi di attesa richiesti al client.
 * Tracciamento
   - Ogni richiesta viene tracciata, indipendentemente dal livello di logging o dall’esito della richiesta
