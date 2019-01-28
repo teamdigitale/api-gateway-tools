@@ -1,16 +1,7 @@
 # GovWay
 
-GovWay è un API gateway open source (licenza GPL-v3) progettato per le specifiche esigenze della Pubblica Amministrazione. Basato sull’esperienza del progetto OpenSPCoop e della Porta di Dominio italiana, assicura la conformità alle normative dell'interoperabilità italiana ed europea, in maniera completamente trasparente alle applicazioni.
-* Conforme alle nuove linee guida AGID per l’interoperabilità ModI 2018 (profilo API Gateway)
-* Conforme alle specifiche per l’interoperabilità europea tramite l’utilizzo del "building block" eDelivery del progetto europeo CEF (Connecting European Facilities) (profilo eDelivery)
-* Conforme alle specifiche per la fatturazione elettronica sul canale SdiCoop (profilo Fatturazione Elettronica)
-* Retrocompatibile con il paradigma di cooperazione applicativa (profilo SPCoop) 
+[GovWay](https://github.com/link-it/govway) è un API gateway open source (licenza GPL-v3) basato su [OpenSPCoop](https://www.openspcoop.org/openspcoop/) e della Porta di Dominio italiana.
 
-Sito Web: https://govway.org
-
-Pagina GitHub: https://github.com/link-it/govway
-
-Licenza: GPL-v3
 
 ## Conformità al Modello di Interoperabilità 2018
 * API REST
