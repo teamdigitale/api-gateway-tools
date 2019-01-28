@@ -35,7 +35,10 @@
     - esito della chiamata: http status code, eventuali fault (SOAPFault per SOAP,  Problem Details per REST), esito della transazione.
     - identificazione del richiedente: identificazione del soggetto fruitore, Identificativo dell’applicativo chiamante se disponibile, indirizzo IP del Chiamante.
     - correlazione alla transazione applicativa: possibilità di estrarre dai contenuti della richiesta ed associare alla traccia un identificativo applicativo univoco. Possibilità di correlare le tracce di chiamate diverse tramite un identificativo unico di correlazione.
-* Work In Progress
+
+
+## Da implementare / Work In Progress
+
   - API di configurazione e monitoraggio del gateway OpenAPI 3.0, conformi alle linee guida del ModI 2018, riusando i componenti definiti in: 
     - https://github.com/teamdigitale/openapi/blob/master/docs/definitions.yaml
   - Supporto ‘Alternative Schema’ per effettuare validazione tramite OpenAPI 3.0 utilizzando schemi differenti come XSD Schema o JSON Schema.  
