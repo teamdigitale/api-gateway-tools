@@ -1,6 +1,8 @@
+**ATTENZIONE**: questo repository ha il solo scopo di condividere informazioni, configurazioni e suggerimenti utili **senza nessuna garanzia o certificazione di conformità**.
+
+
 # api-gateway-tools
 Strumenti per API Gateway utili ad implementare il Modello di Interoperabilità 2018
-
 
 # Il modello di interoperabilità
 Il nuovo modello di interoperabilità introduce lo stile architetturale REST.
