@@ -1,4 +1,4 @@
-**ATTENZIONE**: questo repository ha il solo scopo di condividere informazioni, configurazioni e suggerimenti utili **senza nessuna garanzia o certificazione di conformità**.
+**ATTENZIONE**: come indicato in [LICENSE](LICENSE) questo repository ha il solo scopo di condividere informazioni, configurazioni e suggerimenti utili **senza nessuna garanzia o certificazione di conformità**.
 
 
 # api-gateway-tools
