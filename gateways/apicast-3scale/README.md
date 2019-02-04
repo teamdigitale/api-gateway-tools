@@ -1,7 +1,7 @@
-# WSO2
+# apicast / 3scale
 
-WSO2 è un api gateway con un motore opensource. La sua pagina
-github è: https://github.com/wso2
+Apicast è un api gateway opensource. La sua pagina
+github è: https://github.com/3scale/apicast
 
 Per ulteriori informazioni si veda il repository del progetto.
 
@@ -9,13 +9,11 @@ Per ulteriori informazioni si veda il repository del progetto.
 
  * In caso di superamento della quota, è possibile ritornare:
  
-HTTP 429 (too many requests) se il rate limit viene superato
-
-Regione Lombardia [ha condiviso una sequence](https://github.com/teamdigitale/api-gateway-tools/blob/master/gateways/wso2/handlers/_throttle_out_handler.xml) che permette di ritornare `Retry-After` in caso di 429.
+HTTP 429 (too many requests) se il rate limit viene superato.
 
 Vedi anche:
 
-  - https://github.com/wso2/product-apim/issues/1654
+  - https://github.com/3scale/apicast/pull/929
 
 ## Vanno implementati
 
@@ -29,8 +27,10 @@ Per differire le richieste, si usa l'header
 
 anche implementando meccanismi di exponential back-off.
 
-* Gli header di throttling da implementare [vedi ticket 4295](https://github.com/wso2/product-apim/issues/4295)
+* Per gli header di throttling mancanti è stata aperto il [ticket 953](https://github.com/3scale/apicast/issues/953)
 
   - X-RateLimit-Limit 	        maximum requests limit configured for the API endpoint
   - X-RateLimit-Remaining	remaining requests for the API endpoint until next counter reset
   - X-RateLimit-Reset 	        remaining seconds until next counter reset
+
+
