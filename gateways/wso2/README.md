@@ -13,21 +13,19 @@ HTTP 429 (too many requests) se il rate limit viene superato
 
 Regione Lombardia [ha condiviso una sequence](https://github.com/teamdigitale/api-gateway-tools/blob/master/gateways/wso2/handlers/_throttle_out_handler.xml) che permette di ritornare `Retry-After` in caso di 429.
 
+WSO2 ha implementato il ritorno dell'header `Retry-After` in formato `HTTP-date` dalla versione APIM 3.0.0
+
 Vedi anche:
 
   - https://github.com/wso2/product-apim/issues/1654
-
+  - https://github.com/wso2/carbon-apimgt/pull/7059
+  
 ## Vanno implementati
 
 * Gli status che evidenziano un sovraccarico devono essere ritornati quanto prima:
 
 HTTP 503 (service unavailable) in caso di servizio indisponibile (eg. in manutenzione) o di sovraccarico
 
-Per differire le richieste, si usa l'header
-
-- Retry-After: numero di secondi dopo i quali ripresentarsi
-
-anche implementando meccanismi di exponential back-off.
 
 * Gli header di throttling da implementare [vedi ticket 4295](https://github.com/wso2/product-apim/issues/4295)
 
