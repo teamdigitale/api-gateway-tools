@@ -15,6 +15,13 @@ Vedi anche:
 
   - https://github.com/3scale/apicast/pull/929
 
+* Gli header di throttling sono stati implementati via [PR 1166](https://github.com/3scale/APIcast/pull/1166) nel [ticket 953](https://github.com/3scale/apicast/issues/953)
+
+  - X-RateLimit-Limit 	        maximum requests limit configured for the API endpoint
+  - X-RateLimit-Remaining	remaining requests for the API endpoint until next counter reset
+  - X-RateLimit-Reset 	        remaining seconds until next counter reset
+
+
 ## Vanno implementati
 
 * Gli status che evidenziano un sovraccarico devono essere ritornati quanto prima:
@@ -27,10 +34,5 @@ Per differire le richieste, si usa l'header
 
 anche implementando meccanismi di exponential back-off.
 
-* Per gli header di throttling mancanti è stata aperto il [ticket 953](https://github.com/3scale/apicast/issues/953)
-
-  - X-RateLimit-Limit 	        maximum requests limit configured for the API endpoint
-  - X-RateLimit-Remaining	remaining requests for the API endpoint until next counter reset
-  - X-RateLimit-Reset 	        remaining seconds until next counter reset
 
 
