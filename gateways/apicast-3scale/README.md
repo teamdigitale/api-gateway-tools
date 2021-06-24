@@ -8,7 +8,7 @@ Per ulteriori informazioni si veda il repository del progetto.
 ## Implementati
 
  * In caso di superamento della quota, è possibile ritornare:
- 
+
 HTTP 429 (too many requests) se il rate limit viene superato.
 
 Vedi anche:
@@ -33,6 +33,3 @@ Per differire le richieste, si usa l'header
 - Retry-After: numero di secondi dopo i quali ripresentarsi
 
 anche implementando meccanismi di exponential back-off.
-
-
-

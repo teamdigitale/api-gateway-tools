@@ -7,7 +7,7 @@ Per ulteriori informazioni si veda il repository del progetto.
 ## Implementati (nella versione in sviluppo 2.0.0)
 
  * In caso di superamento della quota, è possibile ritornare:
- 
+
 HTTP 429 (too many requests) se il rate limit viene superato
 
 Kong ha implementato il ritorno dell'header `Retry-After` in formato `delta-seconds`
@@ -24,5 +24,3 @@ Kong ha implementato il ritorno dell'header `Retry-After` in formato `delta-seco
 * Gli status che evidenziano un sovraccarico devono essere ritornati quanto prima:
 
 HTTP 503 (service unavailable) in caso di servizio indisponibile (eg. in manutenzione) o di sovraccarico
-
-
