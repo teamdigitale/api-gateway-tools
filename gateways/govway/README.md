@@ -39,8 +39,8 @@ Di seguito alcune delle funzionalità indicate nella documentazione di Govway a 
 	- Signed JWT with Client Secret: modalità di negoziazione identica alla precedente dove però l’asserzione JWT viene firmata tramite una chiave simmetrica.
 
 * [API](https://govway.readthedocs.io/it/latest/api/index.html) di configurazione e monitoraggio del gateway OpenAPI 3.0
-  - [API di Configurazione](https://generator.swagger.io/?url=https://raw.githubusercontent.com/link-it/govway/master/tools/rs/config/server/src/schemi/merge/govway_rs-api_config.yaml)
-  - [API di Monitoraggio](https://generator.swagger.io/?url=https://raw.githubusercontent.com/link-it/govway/master/tools/rs/monitor/server/src/schemi/merge/govway_rs-api_monitor.yaml)
+  - [API di Configurazione](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/link-it/govway/master/tools/rs/config/server/src/schemi/merge/govway_rs-api_config.yaml)
+  - [API di Monitoraggio](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/link-it/govway/master/tools/rs/monitor/server/src/schemi/merge/govway_rs-api_monitor.yaml)
 
 * Possibilità di realizzare API REST per i servizi SOAP preesistenti in accordo a template di conversione attraverso [engine di trasformazione](https://govway.readthedocs.io/it/latest/console/profiloApiGateway/trasformazioni/index.html)
 
